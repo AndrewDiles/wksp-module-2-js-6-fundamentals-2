@@ -19,6 +19,25 @@ is a variable in function, or method, definition.
 ```js
 // Example
 
+function greeting(names) {
+    names.forEach(function(name){
+        console.log(`${name}! Want some Bacon?`);
+});
+greeting(['daniel', 'andrew', 'scott']);  
+
+
+or
+
+
+function greeting(names) {
+    return names.map(function(name){
+        return `${name}! Want some Bacon?`);
+    });
+}
+console.log(greeting(['daniel', 'andrew', 'scott']);
+
+// the name inside the greeting declaration is the parameter
+
 ```
 
 ---
@@ -43,6 +62,8 @@ function f() {
 
 f("bye");
 ```
+
+extra arguements are ignored.  f('bye') will still run
 
 ---
 
@@ -92,6 +113,13 @@ The third way is an arrow function
 ```js
 someFunc = () => {
     // do something...
+
+names.forEach((name) => console.log(name));
+
+names.map((name) => `Hi $(name)`);
+
+names.map((name) => .............)
+
 }
 ```
 
@@ -114,8 +142,11 @@ I will let you know when to _not_ use a particular syntax.
 someFunc = () => {
     return 'bacon';
 }
-
+otherFunc = (string) => {
+    return string.split();
+}
 console.log(someFunc());
+console.log(otherFunc(someFunc()));
 ```
 
 `return` is the end of the line...

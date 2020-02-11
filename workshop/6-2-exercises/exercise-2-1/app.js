@@ -11,3 +11,15 @@
 // - the cells should all be square.
 // - cells should have a class of 'cell'
 // - cells should have and id of 'cell-#'
+
+const board = document.getElementById('board');
+
+board.style.width = board.style.height = '600px';
+board.style.gridTemplateColumns = board.style.gridTemplateRows = '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr';
+
+for (i=0;i<100;i++){
+    const cell = document.createElement('div')
+    cell.id = `cell${i}`;
+    cell.classList.add('cell');
+    board.appendChild(cell);
+}

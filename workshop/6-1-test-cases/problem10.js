@@ -11,12 +11,38 @@ let verifyEquals = require('../../assets/verify-equals');
 //    - Use the toUpperCase string method
 
 function f(str) {
+  let arrOfWords = str.split(" ");
+  let temp = '';
+  let result = '';
+  console.log(arrOfWords);
+  for (i=0; i<arrOfWords.length; i++){
+    temp = ''
+    for (j=0; j<arrOfWords[i].length; j++){
+      if (j===0){temp+=arrOfWords[i][j].toUpperCase();}
+      else {temp+=arrOfWords[i][j].toLowerCase();}
+    }
+    if (i === arrOfWords.length-1) {result += temp;}
+    else result += `${temp} `;
+  }
+  return result;
+
+
+  // arrOfWords.forEach(element => {
+  //   for (i=1; i<element.length; i++) {
+  //     temp += element.split('')[i].toLowerCase();
+  //     console.log(temp);
+  //   }
+  //   element = element.split('')[0].toUpperCase()+temp;
+  //   result += element;
+  // });
 
 }
 
+f('Hellow over THERE');
+
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ["hello OVER tHERE", "I AM VERY content", "intruth THIS is fUN", "the truth", "will set you FREE"];
+let outputs = ["Hello Over There", "I Am Very Content", "Intruth This Is Fun", "The Truth", "Will Set You Free"];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.
