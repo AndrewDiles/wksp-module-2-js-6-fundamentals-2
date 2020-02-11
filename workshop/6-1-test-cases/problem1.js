@@ -8,15 +8,27 @@ let verifyEquals = require('../../assets/verify-equals');
 // If the string does not have a first character, return undefined.
 
 function f(str) {
-
+    if (str) {return str.split('')[0];}
+    else return undefined;
 }
 
 // Step 2
 // We need 5 test cases. The first input is provided.
 // Don't forget to test all of the question parameters
 
+const testf = function(strarray, resultsarray) {
+    for (i=0; i<strarray.length; i++) {
+        console.log(f(strarray[i]));
+        console.log(resultsarray[i]);
+        console.log(f(strarray[i])===resultsarray[i]);
+    }
+
+}
+
 let inputs = ['max', 'bacon', 'Zebra', 'lion', ''];
 let outputs = ['m', 'b', 'Z', 'l', undefined];
+
+testf(inputs, outputs);
 
 // Step 3
 // Run this file in the debugger.

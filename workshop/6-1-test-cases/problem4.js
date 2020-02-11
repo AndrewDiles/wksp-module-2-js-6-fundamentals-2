@@ -9,8 +9,10 @@ let verifyEquals = require('../../assets/verify-equals');
 // f(["", 4]);      // undefined
 // f(["abc", 0]);   // a
 
-function f(arr) {
-    const letter = arr[0].charAt(arr[1]);
+function f(arr, i) {
+    if (i <= 0) {return}
+    else if (arr.length === undefined) {return}  // actually browsder just gives an error if arr isn't an array
+    const letter = arr[0].charAt(arr[1]-1);
     if (letter === '') return undefined;
     return letter;
 }
@@ -19,8 +21,8 @@ function f(arr) {
 // We need 8 test cases. The first input is provided.
 // Don't forget to test all of the question parameters
 
-let inputs = [['hello', 4], ['', 2]];
-let outputs = ['o', undefined];
+let inputs = [['hello', 4], ['', 2], ['0',2], ['babababa', 1], ['force', 2], ['force', 6], ['force', -1], ['force', 1]];
+let outputs = ['l', undefined, undefined, 'b', 'o', undefined, undefined, 'f'];
 
 // Step 3
 // Run this file in the debugger.

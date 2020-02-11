@@ -22,3 +22,5 @@ switch (day) {
 }
 
 console.log( '--------------------');
+
+// without break; in places, the code will perform eveyrthing beneath it and ignore case n:

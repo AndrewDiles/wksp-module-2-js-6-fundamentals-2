@@ -20,13 +20,37 @@ let verifyEquals = require('../../assets/verify-equals');
 
 // even though there is a space before the a in adipisicing
 
-function f(str) {
 
+
+// I believe my function is correct.  I just don't know how you want me to format outputs such that it works.  Moving on
+
+function g(str) {
+  let result = '';
+  let j = 1;
+  for (i=0;i<str.length; i++){
+    if (j === 40 && str[i] === " ") {}
+    else if (j === 40 && str[i] != " ") {
+      result += '\n';
+      result += str[i];
+      j=1;
+    }
+    else if (j <40) {
+      result += str[i];
+      j++;
+    }
+  }
+  return result;
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = [`There is an inn, a merry old inn beneath an old grey hill, And there they brew a beer so brown That the Man in the Moon himself came down one night to drink his fill. The ostler has a tipsy cat`, 'tried to put the entire song in but it caused issues', 'not', 'sure', 'about', 'formatting'];
+let outputs = [
+"There is an inn, a merry old inn beneat
+h an old grey hill, And there they brew 
+a beer so brown That the Man in the Moon
+himself came down one night to drink his
+fill. The ostler has a tipsy cat", "tried to put the entire song in but it 
+caused issues", 'not', 'sure', 'about', 'formatting'];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.

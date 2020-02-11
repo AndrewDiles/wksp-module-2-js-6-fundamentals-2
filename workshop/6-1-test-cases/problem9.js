@@ -13,12 +13,33 @@ let verifyEquals = require('../../assets/verify-equals');
 //    - A for loop might be helpful
 
 function f(str) {
-
+    let result = '';
+    if (str.length === 0) return '';
+    else {
+        let strsplit = str.split(" ");
+        console.log(strsplit);
+        result = strsplit[0];
+        console.log(result);
+        console.log(strsplit.length-1);
+        for (i=0; i<(strsplit.length-1); i++) {
+            if (result.length <= strsplit[i+1].length) {
+                console.log(i);
+                console.log(result);
+                console.log(strsplit[i+1]);
+                result = strsplit[i+1];}
+            else {
+                console.log(i);
+                console.log(result);
+                console.log(strsplit[i+1]);
+                console.log('not long enough');}
+        }
+    }
+    return result;
 }
 
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ["hide ho Mr Winslow", '', 'mister master get this off me', 'brave the elements', 'overwhelming fog begets your will'];
+let outputs = ['Winslow', '', 'master', 'elements', 'overwhelming'];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.

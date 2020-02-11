@@ -3,20 +3,24 @@ let verifyEquals = require('../../assets/verify-equals');
 // Problem 5
 // ---------
 // Step 1
-// Write a function that accepts an array of two values and returns those two numbers. 
+// Write a function that accepts an array of two values and returns those two numbers.   RETURNS THE PRODUCT?
 // - The input of the function is an array.
 // - If one of the numbers is not passed, or if anything other than numbers are passed, return undefined.
 
 function f(input) {
-    
+    if (input.length != 2) {console.log('not length 2'); return undefined}
+    else if(!(input[0]>=0 || input[0]<=0)) {console.log(input[0]);console.log('first value NaN');return undefined}
+    else if(!(input[1]>=0 || input[1]<=0)) {console.log('second value NaN');return undefined}
+    else if(input[0]==='' || input[1]==='') {console.log('one of values is blank');return undefined}
+    else {console.log('God, give me the answer'); return input[0]*input[1]}
 }
 
 // Step 2
 // We need 5 test cases. The first input is provided.
 // Don't forget to test all of the question parameters
 
-let inputs = [[2, 7]];
-let outputs = [14];
+let inputs = [[2, 7], [1,1], [9,9], ['hello', 0], ['', 4]];
+let outputs = [14, 1, 81, undefined, undefined];
 
 // Step 3
 // Run this file in the debugger.

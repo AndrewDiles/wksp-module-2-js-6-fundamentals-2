@@ -9,15 +9,17 @@ let verifyEquals = require('../../assets/verify-equals');
 // You can use the typeof function to check the type of each element (e.g. typeof 3 returns 'number')
 
 function f(input) {
-
+    if (input.length != 2) {return undefined}
+    else if (input[0] === '' || input[1] === '') {return undefined}
+    else if (input[0] >= input[1] || input[0] <= input[1]) {return input[0] + input[1]}
 }
 
 // Step 2
 // We need 7 test cases. The first input is provided.
 // Don't forget to test all of the question parameters
 
-let inputs = [[2, 4], [-3, 3]];
-let outputs = [6, 0];
+let inputs = [[2, 4], [-3, 3], ['banana', 0], ['', 9], [-1, 3.5], [0, 0], [91, 9]];
+let outputs = [6, 0, undefined, undefined, 2.5, 0, 100];
 
 // Step 3
 // Run this file in the debugger.
